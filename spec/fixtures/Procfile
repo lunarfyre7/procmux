@@ -1,0 +1,3 @@
+foo: foobar
+nya: meow
+test: command -- : * ; ''"".

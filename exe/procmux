@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+
+require 'optparse'
+require 'procmux'
+
+DEFAULT = 'Procfile'
+
+options = {}
+OptionParser.new do |opts|
+  opts.on('-fFILE', '--procfile=FILE') do |v|
+    options[:file] = v
+  end
+end.parse!
+
+pm = Procmux::Prox.new procfile: options[:file] || DEFAULT
+pm.run!
